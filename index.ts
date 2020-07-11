@@ -2,6 +2,8 @@ require('dotenv').config()
 
 const { Telegraf } = require('telegraf')
 
+console.log(process.env.TELEGRAM_TOKEN)
+
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 
 bot.start((ctx) => ctx.reply('Welcome'))
