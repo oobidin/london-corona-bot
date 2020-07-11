@@ -30,7 +30,7 @@ const downloadData = async () => {
   }
 }
 
-bot.hears('data', async (ctx) => {
+bot.hears(['data', 'Data'], async (ctx) => {
   ctx.reply('Thinking...')
 
   const data = await downloadData()
