@@ -2,10 +2,9 @@
   "name": "london-corona-bot",
   "version": "0.0.1",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "node index.js"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.1.0",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "eslint-config-airbnb-typescript": "^8.0.2",
@@ -15,12 +14,9 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "fs-extra": "^9.0.1",
     "install": "^0.13.0",
-    "telegraf": "^3.38.0",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.6"
+    "telegraf": "^3.38.0"
   },
   "devDependencies": {
-    "@types/node": "^14.0.22",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5"
