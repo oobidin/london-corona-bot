@@ -1,3 +1,6 @@
+console.log('NODE_ENV: ', process.env.NODE_ENV)
+console.log('TELEGRAM_TOKEN: ', process.env.TELEGRAM_TOKEN)
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
