@@ -3,8 +3,18 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const { Telegraf } = require('telegraf')
-const fs = require('fs-extra')
 const request = require('axios')
+const express = require('express')
+
+const expressApp = express()
+
+const port = process.env.PORT || 3000
+expressApp.get('/', (req, res) => {
+  res.send('It works!')
+})
+expressApp.listen(port, () => {
+  console.log(`Listening on port ${port}`)
+})
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 
