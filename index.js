@@ -10,6 +10,7 @@ const expressApp = express()
 
 const port = process.env.PORT || 3000
 const URL = process.env.URL
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN
 
 expressApp.get('/', (req, res) => {
   res.send('It works!')
@@ -18,7 +19,7 @@ expressApp.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
 
-const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
+const bot = new Telegraf(TELEGRAM_TOKEN)
 
 bot.telegram.setWebhook(`${URL}/bot${TELEGRAM_TOKEN}`)
 bot.startWebhook(`/bot${TELEGRAM_TOKEN}`, null, PORT)
