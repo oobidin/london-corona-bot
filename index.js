@@ -15,8 +15,8 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN
 expressApp.get('/', (req, res) => {
   res.send('It works!')
 })
-expressApp.listen(port, () => {
-  console.log(`Listening on port ${port}`)
+expressApp.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`)
 })
 
 const bot = new Telegraf(TELEGRAM_TOKEN)
