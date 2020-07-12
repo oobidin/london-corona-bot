@@ -31,9 +31,10 @@ const downloadAndFormatData = async () => {
   }
 }
 
-const webhookUrl = `bot/${TELEGRAM_TOKEN}`
+const webhookUrl = `/bot${TELEGRAM_TOKEN}`
 
-bot.telegram.setWebhook(`${URL}/${webhookUrl}`)
+bot.telegram.setWebhook(`${URL}${webhookUrl}`)
+bot.startWebhook(webhookUrl, null, PORT)
 
 bot.hears(['data', 'Data'], async (ctx) => {
   ctx.reply('Thinking...')
@@ -42,5 +43,3 @@ bot.hears(['data', 'Data'], async (ctx) => {
 
   ctx.reply(data)
 })
-
-bot.startWebhook(`/${webhookUrl}`, null, PORT)
