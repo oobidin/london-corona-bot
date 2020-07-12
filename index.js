@@ -8,7 +8,7 @@ const express = require('express')
 
 const expressApp = express()
 
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 const URL = process.env.URL
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN
 
