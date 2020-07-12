@@ -20,8 +20,8 @@ expressApp.listen(port, () => {
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 
-bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`)
-bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
+bot.telegram.setWebhook(`${URL}/bot${TELEGRAM_TOKEN}`)
+bot.startWebhook(`/bot${TELEGRAM_TOKEN}`, null, PORT)
 
 const CSV_URL =
   'https://data.london.gov.uk/download/coronavirus--covid-19--cases/7a3c305c-fa4e-47db-8843-aed537cde495/phe_cases_london_england.csv'
