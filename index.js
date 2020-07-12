@@ -9,6 +9,8 @@ const express = require('express')
 const expressApp = express()
 
 const port = process.env.PORT || 3000
+const URL = process.env.URL
+
 expressApp.get('/', (req, res) => {
   res.send('It works!')
 })
@@ -17,6 +19,9 @@ expressApp.listen(port, () => {
 })
 
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
+
+bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`)
+bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
 
 const CSV_URL =
   'https://data.london.gov.uk/download/coronavirus--covid-19--cases/7a3c305c-fa4e-47db-8843-aed537cde495/phe_cases_london_england.csv'
@@ -47,5 +52,3 @@ bot.hears(['data', 'Data'], async (ctx) => {
 
   ctx.reply(data)
 })
-
-bot.launch()
